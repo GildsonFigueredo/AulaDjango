@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+   
+    <form action="{% url 'cadastro' %}"method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <div style="text-align:center;" class="container">
+        <h1 style="padding:40px;">Cadastro de Usuários</h1>
+        Nome <input name="nome" class="form-control-sm" type="text" autofocus>
+        Idade <input name="idade" class="form-contol-sm" type="text">
+        <button class="form-control-sm" type="submit" href="/cadastro">Salvar</button>
+        <a class="btn btn-primary" href={% url 'listagem_usuarios' %} role=button>Listagem</a>
+     </div>
+     <div>
+        
+     </div>
+    </form>
+{% endblock %}    
+  
+  
+ 

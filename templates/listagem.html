@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+
+   <div class="container">
+    <h1>Usuarios Cadastrados</h1>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>id</th>
+            <th>nome</th>
+            <th>idade</th>
+            <th>operação</th>
+        </tr>
+        {% for usuario in usuarios %}
+        <tr>
+            <td>{{usuario.id}}</td>
+            <td>{{usuario.nome}}</td>
+            <td>{{usuario.idade}}</td>
+            <td>
+                <a class="btn btn-danger" href={% url 'excluir_usuario' id=usuario.id %} role="button" onclick="alert('usuário excluído')">Excluir</a>
+                <a class="btn btn-primary" href={% url 'atualizar_usuarios' id=usuario.id %} role="button">Editar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+  </div>
+
+  {% endblock %}
+    

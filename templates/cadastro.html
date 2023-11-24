@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+
+<div class="col-4">
+    {% if form %}
+    <form action="{% url 'cadastro' %}" method="post">
+    {% csrf_token %}
+  
+    <div style="text-align:center; padding:40px; padding-left:100px;" class="container">
+       
+        <h3> Usuário cadastrado com sucesso!</h3>
+       
+              
+    </div>
+    </form>
+    <button class="form-control-sm" href="{% url 'home' %}">Voltar</button>
+    {% endif %}
+    <div class="col"></div>
+</div>
+{% endblock %}    
+  
+  
+ 
